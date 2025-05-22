@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Holiday Packages</title>
+    <link rel="icon" href="../TravelWebsite/Images/my.png" type="image/x-icon" />
+    <link rel="stylesheet" href="package.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/1cebc86419.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="titleNav text-center py-2">
+      <div class="container-fluid">
+        <div class="topic d-flex justify-content-start">
+          <a class="navbar-brand text-dark" href="../TravelWebsite/travel.html"
+            >Make
+            <span
+              id="box"
+              style="
+                background-color: red;
+                padding: 0px 5px 5px 5px;
+                color: white;
+                border-radius: 5px;
+                font-style: italic;
+              "
+              >my</span
+            >
+            travel</a
+          >
+        </div>
+        <h1 class="display-4 text-white" style="font-weight: bold;">
+          <span class="holi text-danger"
+            ><i class="fa-solid fa-champagne-glasses"></i
+          ></span>
+          <span class="text-danger">Holiday</span> Packages
+        </h1>
+        <p class="lead" style="font-size: 1.5rem; font-weight: 400">
+          Explore our exclusive holiday packages and make unforgettable
+          memories!
+        </p>
+      </div>
+    </header>
+<section class="search-bar text-center py-3">
+    <div class="container">
+       <div class="row">
+        <div class="col-md-10">
+        <form class="d-flex justify-content-center" action="" method="">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search for packages..."
+            aria-label="Search"
+            name="query"
+            id="searchInp"
+          />
+          <button class="btn btn-outline-danger" id="searchBtn" type="submit">Search</button>
+        </form>
+      </div>
+      <!-- Add to cart icon -->
+       <div class="col-md-2">
+        <div class="cart">
+          <i class="fa-solid fa-suitcase fs-1 position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <span class="position-absolute top-0 start-100 fs-5 translate-middle p-2 bg-danger border border-light rounded-circle d-none" id="cartCount">
+              <span class="visually-hidden">New alerts</span>
+            </span>
+          </i>
+        </div>
+       </div>
+    </div>
+
+
+         
+
+        <div class="container mt-4 row filter">
+            <span class="filt"><i class="fa-sharp fa-solid fa-filter"></i> FiLters</span>
+
+           <div class="col-md-3">
+            <select class="form-select" id="packageFilter" aria-label="Default select example">
+                <option selected value="all">Package Type</option>
+                <option value="Family" name="family" id="fam" >Family</option>
+                <option value="Couple" name="couple" id="coup">Couple</option>
+                <option value="Friends" name="friends" id="frnds">Friends</option>
+                <option value="Solo" name="solo" id="solo">Solo</option>
+            </select>
+           </div>
+
+           <div class="col-md-3">
+            <select class="form-select" id="destinationFilter" aria-label="Default select example">
+                <option selected value="all">Destination</option>
+                <option value="goa">Goa</option>
+                <option value="kerala">Kerala</option>
+                <option value="himachal">Himachal Pradesh</option>
+                <option value="andaman">Andaman</option>
+            </select>
+           </div>
+
+           <div class="col-md-3">
+            <select class="form-select" id="durationFilter" aria-label="Default select example">
+                <option selected value="all">Duration</option>
+                <option value="4days">3N/4D</option>
+                <option value="3days">2N/3D</option>
+                <option value="5days">4N/5D</option>
+            </select>
+           </div>
+
+           <div class="col-md-3">
+             <!-- Transports -->
+                <select class="form-select" id="transportFilter" aria-label="Default select example">
+                    <option selected value="all">Transport</option>
+                    <option value="train">Train</option>
+                    <option value="flight">Flight</option>
+                    <option value="bus">Bus</option>
+                    <option value="car">Car</option>
+                </select>
+           </div>
+
+           <div class="col-md-3">
+            <div class="budget-value" id="budgetValue"></div>
+            <input
+                  type="range"
+                  class="form-range budget-slider"
+                  min="10000"
+                  max="50000"
+                  step="1000"
+                  value="25000"
+                  id="budgetRange"
+                />
+           </div>
+
+           <div class="col-md-3">
+                <select class="form-select" id="themeFilter" aria-label="Default select example">
+                    <option selected value="all">Theme</option>
+                    <option value="adventure">Adventure</option>
+                    <option value="relax">Relaxation</option>
+                    <option value="culture">Culture</option>
+                    <option value="nature">Nature</option>
+                </select>
+           </div>
+           
+                <div class="col-md-3">
+                    <button class="btn btn-danger" id="btn" type="submit">Apply</button>
+                </div>
+              
+        </div>
+        <div class="container box mt-5 row justify-content-center align-items-center">
+          <h1 id="notFind"></h1>
+          <!-- <img src="../TravelWebsite/Images/noFound.jpg" width="100%" height="100%" class="d-none" id="notFind"></img> -->
+          <div class="col-md-6 py-3 py-md-0 mt-3 mt-md-0">
+            <div class="card" data-package="Family" data-destination="goa" data-duration="4days" data-transport="train" data-price="15000" data-theme="relax" data-card-id="card1" style="max-width: 30rem; border-radius: 20px;">
+              <img
+                src="../TravelWebsite/Images/goa1.jpg"
+                height="250px"
+                class="card-img-top"
+                id="img-id"
+                alt="..." style="border-radius: 20px 20px 0 0"
+              />
+              <div class="card-body">
+                <div class="cardtitle d-flex justify-content-between">
+                    <h5 class="packageHead" cartId="Goa">Three Nights Goa Getaway</h5>
+                    <span class="selected days" id="days">3N/4D</span>
+                </div>
+                 <hr>
+                <div class="card-list d-flex justify-content-between" infoId="In this package, you have 5 people to make this trip in Goa. It is a wonderful place to visit. In this package we arranged hotels,foods,travelling by train and not only beach there is two more hidden places are there to visit will consist by this package">
+                    <ul >
+                        <li >Round Trip with Train</li>
+                        <li>Stayed at Hotels</li>
+                        <li>Foods inside the Hotel</li>
+                    </ul>
+                </div>
+                
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="price">
+                    <div class="row">
+                        <div class="col-md-3 py-2 d-flex text-center text-start cartAmnt">
+                            <span class="fs-5 fw-bold amnt" cartId="15000/-">₹15000/-</span>
+                            <!-- <span class="small">Per</span> -->
+                        </div>
+                        <div class="col-md-6 py-2 btn">
+                            <button class="fs-5 fw-bold btnBook"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Book Now <i class="fa-solid fa-arrow-right"></i></button>
+                            <span class="card-cart-count visually-hidden">0</span> 
+                        </div>
+                        <div class="col-md-3 py-2">
+                          <div class="cart">
+                            <i class="fa-solid fa-suitcase fs-1 position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                              <span class="position-absolute top-0 start-100 fs-5 translate-middle p-2 bg-danger border border-light rounded-circle" id="cartCount">
+                                <span class="visually-hidden">New alerts</span>
+                              </span>
+                            </i>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+            
+          <div class="col-md-6 py-3 py-md-0 mt-3 mt-md-0">
+            <div class="card" data-package="Friends" data-destination="goa" data-duration="3days" data-transport="flight" data-price="35000" data-theme="relax" style="max-width: 30rem; border-radius: 20px;">
+              <img
+                src="../TravelWebsite/Images/goabest.jpg"
+                height="250px"
+                class="card-img-top"
+                alt="..." style="border-radius: 20px 20px 0 0"
+              />
+              <div class="card-body">
+                <div class="cardtitle d-flex justify-content-between">
+                    <p class="packageHead" cartId="Goa the Best">Best Places in Goa</p>
+                    <span class="selected" id="days">2N/3D</span>
+                </div>
+                 <hr>
+                <div class="card-list d-flex justify-content-between" infoId="In this package, you have 5 people to make this trip in Goa. It is a wonderful place to visit. In this package we arranged hotels,foods,travelling by flight and not only beach there is two more hidden places are there to visit will consist by this package">
+                    <ul>
+                        <li>Round Trip with Flight</li>
+                        <li>Stayed at Hotels</li>
+                        <li>Foods inside the Hotel</li>
+                    </ul>
+                </div>
+                
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="price">
+                    <div class="row">
+                      <div class="col-md-3 py-2 d-flex text-center text-start cartAmnt">
+                        <span class="fs-5 fw-bold amnt" cartId="35000/-">₹35000/-</span>
+                        <!-- <span class="small">Per</span> -->
+                    </div>
+                    <div class="col-md-6 py-2 btn">
+                      <button class="fs-5 fw-bold btnBook"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Book Now <i class="fa-solid fa-arrow-right"></i></button>
+                      <span class="card-cart-count visually-hidden">1</span> 
+                  </div>
+                  <div class="col-md-3 py-2">
+                    <div class="cart">
+                      <i class="fa-solid fa-suitcase fs-1 position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <span class="position-absolute top-0 start-100 fs-5 translate-middle p-2 bg-danger border border-light rounded-circle" id="cartCount">
+                          <span class="visually-hidden">New alerts</span>
+                        </span>
+                      </i>
+                    </div>
+                  </div>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 py-3 py-md-0 mt-3 mt-md-0">
+            <div class="card" data-package="Friends" data-destination="goa" data-duration="4days" data-transport="flight" data-price="55000" data-theme="relax" style="max-width: 30rem; border-radius: 20px;">
+              <img
+                src="../TravelWebsite/Images/goahotels.jpg"
+                height="250px"
+                class="card-img-top"
+                alt="..." style="border-radius: 20px 20px 0 0"
+              />
+              <div class="card-body">
+                <div class="cardtitle d-flex justify-content-between">
+                    <p class="packageHead" cartId="Goa Forest Villa's">Goa Forest Villa's and Resort</p>
+                    <span class="selected">3N/4D</span>
+                </div>
+                 <hr>
+                <div class="card-list d-flex justify-content-between" infoId="In this package, you have 5 people to make this trip in Goa. It is a wonderful place to visit. In this package we arranged hotels,foods,travelling by flight and not only beach there is two more hidden places are there to visit will consist by this package">
+                    <ul>
+                        <li>Round Trip with Flight</li>
+                        <li>Stayed at Hotels</li>
+                        <li>Foods inside the Hotel</li>
+                    </ul>
+                </div>
+                
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="price">
+                    <div class="row">
+                        <div class="col-md-3 py-2 text-center text-start cartAmnt">
+                            <p class="fs-5 fw-bold amnt" cartId="55000/-">₹55000/<span class="small">Total<span></p>
+                        </div>
+                        <div class="col-md-6 py-2 btn">
+                              <button class="fs-5 fw-bold btnBook" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Book Now <i class="fa-solid fa-arrow-right"></i></button>
+                              <span class="card-cart-count visually-hidden">1</span> 
+
+                        </div>
+                        <div class="col-md-3 py-2">
+                          <div class="cart">
+                            <i class="fa-solid fa-suitcase fs-1 position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                              <span class="position-absolute top-0 start-100 fs-5 translate-middle p-2 bg-danger border border-light rounded-circle" id="cartCount">
+                                <span class="visually-hidden">New alerts</span>
+                              </span>
+                            </i>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 py-3 py-md-0 mt-3 mt-md-0">
+            <div class="card" data-package="Couple" data-destination="goa" data-duration="3days" data-transport="train" data-price="20000" data-theme="relax" style="max-width: 30rem; border-radius: 20px;">
+              <img
+                src="../TravelWebsite/Images/goaholidayInn.jpg"
+                height="250px"
+                class="card-img-top"
+                alt="..." style="border-radius: 20px 20px 0 0"
+              />
+              <div class="card-body">
+                <div class="cardtitle d-flex justify-content-between">
+                    <p class="packageHead" cartId="Goa's Rich Inn" >Goa's rich Inn</p>
+                    <span class="selected">2N/3D</span>
+                </div>
+                 <hr>
+                <div class="card-list d-flex justify-content-between" infoId="In this package, you have 5 people to make this trip in Goa. It is a wonderful place to visit. In this package we arranged hotels,foods,travelling by train and not only beach there is two more hidden places are there to visit will consist by this package">
+                    <ul>
+                        <li>Round Trip with Train</li>
+                        <li>Stayed at Hotels</li>
+                        <li>Foods inside the Hotel</li>
+                    </ul>
+                </div>
+                
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                </div>
+                <div class="price">
+                    <div class="row">
+                        <div class="col-md-3 py-2 text-center text-start cartAmnt">
+                            <p class="fs-5 fw-bold amnt" cartId="20000/-">₹20000/<span class="small">Per<span></p>
+                        </div>
+                        <div class="col-md-6 py-2 btn">
+                          <button class="fs-5 fw-bold btnBook" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Book Now <i class="fa-solid fa-arrow-right"></i></button>
+                            <span class="card-cart-count visually-hidden">1</span> 
+                        </div>
+                        <div class="col-md-3 py-2">
+                          <div class="cart">
+                            <i class="fa-solid fa-suitcase fs-1 position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                              <span class="position-absolute top-0 start-100 fs-5 translate-middle p-2 bg-danger border border-light rounded-circle" id="cartCount">
+                                <span class="visually-hidden">New alerts</span>
+                              </span>
+                            </i>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 py-3 py-md-0 mt-3 mt-md-0">
+            <div class="card" data-package="Friends" data-destination="kerala" data-duration="4days" data-transport="train" data-price="15000" data-theme="culture" style="max-width: 30rem; border-radius: 20px;">
+              <img
+                src="../TravelWebsite/Images/keralaalappe.jpg"
+                height="250px"
+                class="card-img-top"
+                alt="..." style="border-radius: 20px 20px 0 0"
+              />
+              <div class="card-body">
+                <div class="cardtitle d-flex justify-content-between">
+                    <p class="packageHead">Three Nights Kerala trip</p>
+                    <span class="selected">3N/4D</span>
+                </div>
+                 <hr>
+                <div class="card-list d-flex justify-content-between col">
+                    <ul class="row-md-3">
+                        <li>Round Trip with Train</li>
+                        <li>Stayed at Hotels</li>
+                        <li>Foods inside the Hotel</li>
+                    </ul>
+                    <ul class="row-md-3 text-success">
+                        <li>HouseBoats Day Cruise</li>
+                        <li>Kathakali Dance Show</li>
+                        <li>Boating in Periyar Lake</li>
+                    </ul>
+                </div>
+                
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="price">
+                    <div class="row">
+                        <div class="col-md-6 py-2 text-center text-start">
+                            <p class="fs-5 fw-bold">₹15000/<span class="small">Per<span></p>
+                        </div>
+                        <div class="col-md-6 py-2 btn">
+                            <p class="fs-5 fw-bold">Book Now <i class="fa-solid fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 py-3 py-md-0 mt-3 mt-md-0">
+            <div class="card" data-package="Couple" data-destination="kerala" data-duration="3days" data-transport="train" data-price="20000" data-theme="adventure" style="max-width: 30rem; border-radius: 20px;">
+              <img
+                src="../TravelWebsite/Images/wayaZipline.jpg"
+                height="250px"
+                class="card-img-top"
+                alt="..." style="border-radius: 20px 20px 0 0"
+              />
+              <div class="card-body">
+                <div class="cardtitle d-flex justify-content-between">
+                    <p class="packageHead">Adventure at Kerala</p>
+                    <span class="selected">2N/3D</span>
+                </div>
+                 <hr>
+                <div class="card-list d-flex justify-content-between">
+                    <ul>
+                        <li>Round Trip with Train</li>
+                        <li>Stayed at Hotels</li>
+                        <li>Foods inside the Hotel</li>   
+                    </ul>
+                </div>
+                
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="price">
+                    <div class="row">
+                        <div class="col-md-6 py-2 text-center text-start">
+                            <p class="fs-5 fw-bold">₹20000/<span class="small">Per<span></p>
+                        </div>
+                        <div class="col-md-6 py-2 btn">
+                            <p class="fs-5 fw-bold">Book Now <i class="fa-solid fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 py-3 py-md-0 mt-3 mt-md-0">
+            <div class="card" data-package="Solo" data-destination="kerala" data-duration="3days" data-transport="train" data-price="12000" data-theme="nature" style="max-width: 30rem; border-radius: 20px;">
+              <img
+                src="../TravelWebsite/Images/keralamunnar.jpg"
+                height="250px"
+                class="card-img-top"
+                alt="..." style="border-radius: 20px 20px 0 0"
+              />
+              <div class="card-body">
+                <div class="cardtitle d-flex justify-content-between">
+                    <p class="packageHead">Nature Of Kerala</p>
+                    <span class="selected">2N/3D</span>
+                </div>
+                 <hr>
+                <div class="card-list d-flex justify-content-between">
+                    <ul>
+                        <li>Round Trip with Train</li>
+                        <li>Stayed at Hotels</li>
+                        <li>Foods inside the Hotel</li>   
+                    </ul>
+                </div>
+                
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="price">
+                    <div class="row">
+                        <div class="col-md-6 py-2 text-center text-start">
+                            <p class="fs-5 fw-bold">₹12000/<span class="small">Per<span></p>
+                        </div>
+                        <div class="col-md-6 py-2 btn">
+                            <p class="fs-5 fw-bold">Book Now <i class="fa-solid fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 py-3 py-md-0 mt-3 mt-md-0">
+            <div class="card" data-package="Friends" data-destination="kerala" data-duration="3days" data-transport="train" data-price="25000" data-theme="nature" style="max-width: 30rem; border-radius: 20px;">
+              <img
+                src="../TravelWebsite/Images/keralawaynadu.jpg"
+                height="250px"
+                class="card-img-top"
+                alt="..." style="border-radius: 20px 20px 0 0"
+              />
+              <div class="card-body">
+                <div class="cardtitle d-flex justify-content-between">
+                    <p class="packageHead">View Point in Wayanadu</p>
+                    <span class="selected">2N/3D</span>
+                </div>
+                 <hr>
+                <div class="card-list d-flex justify-content-between col">
+                    <ul class="row-md-3">
+                        <li>Round Trip with Train</li>
+                        <li>Stayed at Hotels</li>
+                        <li>Foods inside the Hotel</li>   
+                    </ul>
+                    <ul class="row-md-3 text-success">
+                        <li>BanchyJumping</li>
+                        <li>Glass Walk</li>
+                    </ul>
+                </div>
+                
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="price">
+                    <div class="row">
+                        <div class="col-md-6 py-2 text-center text-start">
+                            <p class="fs-5 fw-bold">₹25000/<span class="small">Per<span></p>
+                        </div>
+                        <div class="col-md-6 py-2 btn">
+                            <p class="fs-5 fw-bold">Book Now <i class="fa-solid fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 py-3 py-md-0 mt-3 mt-md-0">
+            <div class="card" data-package="Couple" data-destination="kerala" data-duration="3days" data-transport="train" data-price="35000" data-theme="nature"  style="max-width: 30rem; border-radius: 20px;">
+              <img
+                src="../TravelWebsite/Images/wayaRelax.jpg"
+                height="250px"
+                class="card-img-top"
+                alt="..." style="border-radius: 20px 20px 0 0"
+              />
+              <div class="card-body">
+                <div class="cardtitle d-flex justify-content-between">
+                    <p class="packageHead">Wayanadu Hotels</p>
+                    <span class="selected">2N/3D</span>
+                </div>
+                 <hr>
+                <div class="card-list d-flex justify-content-between">
+                    <ul>
+                        <li>Round Trip with Train</li>
+                        <li>Stayed at Hotels</li>
+                        <li>Foods inside the Hotel</li>   
+                    </ul>
+                </div>
+                
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="price">
+                    <div class="row">
+                        <div class="col-md-6 py-2 text-center text-start">
+                            <p class="fs-5 fw-bold">₹35000/<span class="small">Per<span></p>
+                        </div>
+                        <div class="col-md-6 py-2 btn">
+                            <p class="fs-5 fw-bold">Book Now <i class="fa-solid fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 py-3 py-md-0 mt-3 mt-md-0">
+            <div class="card" data-package="Friends" data-destination="kerala" data-duration="3days" data-transport="train" data-price="15000" data-theme="adventure" style="max-width: 30rem; border-radius: 20px;">
+              <img
+                src="../TravelWebsite/Images/keralamount.jpg"
+                height="250px"
+                class="card-img-top"
+                alt="..." style="border-radius: 20px 20px 0 0"
+              />
+              <div class="card-body">
+                <div class="cardtitle d-flex justify-content-between">
+                    <p class="packageHead">Mountain's of Kerala</p>
+                    <span class="selected">2N/3D</span>
+                </div>
+                 <hr>
+                <div class="card-list d-flex justify-content-between">
+                    <ul>
+                        <li>Round Trip with Train</li>
+                        <li>Stayed at Hotels</li>
+                        <li>Foods inside the Hotel</li>   
+                    </ul>
+                </div>
+                
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="price">
+                    <div class="row">
+                        <div class="col-md-6 py-2 text-center text-start">
+                            <p class="fs-5 fw-bold">₹15000/<span class="small">Per<span></p>
+                        </div>
+                        <div class="col-md-6 py-2 btn">
+                            <p class="fs-5 fw-bold">Book Now <i class="fa-solid fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+    </div>
+</section>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel"></h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+     <header>
+      <div class="container">
+        <div class="insideTitle">
+        <h3>Your Booking Details!!</h3>
+         </div>
+      </div>
+     </header>
+     <section>
+        <div class="container cartBox" id="cartContainer">
+          <div class="main">
+            <div class="cartImg"></div>
+            <div class="cartTitle"></div>
+             <div class="bookDetails"></div>
+             <div class="bookAmnt"></div>
+          </div>
+        </div>
+     </section>
+     <footer>
+      <div class="container cart-footer">
+        <button class="btn btn-outline-success text-center w-100 fw-bold orderBtn" >Book your Trip</button>
+      </div>
+     </footer>
+  </div>
+</div>
+  
+
+   <script src="../TravelWebsite/travel.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

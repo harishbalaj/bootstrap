@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make My Travel</title>
+    <link rel="icon" href="../TravelWebsite/Images/my.png" type="image/x-icon" />
+    <link rel="stylesheet" href="travel.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/1cebc86419.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+   
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand me-5" href="#"
+            >Make <span id="box">my</span> travel</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#offers">Offers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#pack">Packages</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#clients">Review</a>
+              </li> -->
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Packages
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="../TravelWebsite/packages.html">All Packages</a></li>
+                  <li><a class="dropdown-item" href="#pack">Popular package</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#clients">Review</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#foot">Contact</a>
+              </li>
+              <!-- <li class="nav-item d-flex">
+                <button>
+                  <a class="nav-link" id="navlink" href="#">Book Now</a>
+                </button>
+              </li> -->
+              
+            </ul>
+            <form class="d-flex">
+              <a href="../TravelWebsite/form.html" class="overflow-hidden" >
+              <button type="button" class="btn btn-outline-success" id="myButton">
+                <i class="fa-solid fa-right-to-bracket text-danger"></i> Login
+              </button>
+            </a>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section id="home">
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <video
+              src="../TravelWebsite/Videos/istockphoto-1976735092-640_adpp_is.mp4"
+              class="d-block w-100"
+              loop
+              autoplay
+              muted
+            ></video>
+            <!-- <img src="../TravelWebsite/Images/carousel1img.jpg" class="d-block w-100" alt="..."> -->
+            <div class="carousel-caption d-none d-md-block">
+              <h1 class="text-white">Feel Happy while trecking</h1>
+              <p class="text-white">
+                Traveling is a way to explore the world and learn about
+                different cultures.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video
+              src="../TravelWebsite/Videos/istockphoto-628868702-640_adpp_is.mp4"
+              class="d-block w-100"
+              loop
+              autoplay
+              muted
+            ></video>
+            <!-- <img src="../TravelWebsite/Images/carousel4img.jpg" class="d-block w-100" alt="..."> -->
+            <div class="carousel-caption d-none d-md-block">
+              <h1 class="text-white">Amazing way of travel is Boating</h1>
+              <p class="text-white">
+                It allows us to step out of our comfort zones and experience new
+                things.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video
+              src="../TravelWebsite/Videos/istockphoto-1142533608-640_adpp_is.mp4"
+              class="d-block w-100"
+              loop
+              autoplay
+              muted
+            ></video>
+            <!-- <img src="../TravelWebsite/Images/carousel3img.jpg" class="d-block w-100" alt="..."> -->
+            <div class="carousel-caption d-none d-md-block">
+              <h1 class="text-white">
+                Create Memories with your family by travel
+              </h1>
+              <p class="text-white">
+                Traveling can be a great way to relax and recharge, as well as a
+                chance to create lasting memories with friends and family.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    <section class="sec4">
+      <div class="container row">
+           <h1 class="txtSec4 text-center"><span class="gallery"><i class="fa-duotone fa-solid fa-images"></i></span> TRAVEL <span class="int">STORIES</span></h1>
+            <p class="text-center">Explore the world through our lens.
+              Traveling is a way to explore the world and learn about different cultures. <br>
+              It allows us to step out of our comfort zones and experience new things.
+            </p>
+          <div class="row nrow py-2 py-md-0">
+            <div class="grid-container">
+              <div class="item1">
+                <img src="../TravelWebsite/Images/ramp.jpg" alt="">
+              </div>
+              <div class="item2">
+                <img src="../TravelWebsite/Images/alupuzha.jpg" alt="">
+              </div>
+              <div class="item3">
+                <img src="../TravelWebsite/Images/seafriends.jpg" alt="">
+              </div>  
+              <div class="item4">
+                <img src="../TravelWebsite/Images/couple.jpg" alt="">
+              </div>
+              <div class="item5">
+                <img src="../TravelWebsite/Images/item2.jpg" alt="">
+              </div>
+              <div class="item6">
+                <img src="../TravelWebsite/Images/travelingfriends.jpg" alt="">
+              </div>
+              <div class="item7">
+                <img src="../TravelWebsite/Images/river.jpg" alt="">
+              </div>
+              <div class="item8">
+                <img src="../TravelWebsite/Images/mount.jpeg" alt="">
+              </div> 
+              <div class="item9">
+                <img src="../TravelWebsite/Images/varkala.jpg" alt="">
+              </div>
+              <div class="item10">
+                <img src="../TravelWebsite/Images/trecking1.jpg" alt="">
+              </div>
+              <div class="item11">
+                <img src="../TravelWebsite/Images/fam.jpg" alt="">
+              </div>
+              <div class="item12">
+                <img src="../TravelWebsite/Images/fam2.jpg" alt="">
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+    <section class="sec3" id="pack">
+      <div class="container row">
+        <h1 class="text-center txth1">
+          <span class="txtc">TRAVEL</span>
+          <span class="txtlogo text-danger">PACKAGES</span
+          ><img
+            src="../TravelWebsite/Images/travellogo.jpg"
+            width="110px"
+            height="80px"
+            alt=""
+          />
+        </h1>
+
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card" style="max-width: 18rem">
+            <img
+              src="../TravelWebsite/Images/package1.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h2 class="card-title">Paris</h2>
+              <p class="card-text">
+                Paris, France's capital, is a major European city and a global
+                center for art, fashion, and culture.
+              </p>
+              <div class="star">
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <a href="../TravelWebsite/packages.html" class="overflow-hidden">
+              <button class="amnt">Book Now  <i class="fa-solid fa-arrow-right"></i></button>
+            </a>
+            </div>
+            <div class="card-body">
+              <span class="map"><i class="fa-solid fa-location-dot"></i></span>
+              <a
+                href="https://www.google.com/maps/place/Paris,+France/@48.8589634,2.1822218,11z/data=!3m1!4b1!4m6!3m5!1s0x47e66e1f06e2b70f:0x40b82c3688c9460!8m2!3d48.8575475!4d2.3513765!16zL20vMDVxdGo?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+                class="card-link"
+                >Paris</a
+              >
+            
+            <span class="people"><i class="fa-solid fa-users"></i> 10 People</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card" style="max-width: 18rem">
+            <img
+              src="../TravelWebsite/Images/package2.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h2 class="card-title">Dubai</h2>
+              <p class="card-text">
+                Dubai is a city in the United Arab Emirates known for luxury
+                shopping, ultramodern architecture.
+              </p>
+              <div class="star">
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+              </div>
+              <a href="../TravelWebsite/packages.html" class="overflow-hidden">
+              <button class="amnt">Book Now  <i class="fa-solid fa-arrow-right"></i></button>
+              </a>
+            </div>
+            <div class="card-body">
+              <span class="map"><i class="fa-solid fa-location-dot"></i></span>
+              <a
+                href="https://www.google.com/maps/place/Dubai+-+United+Arab+Emirates/@25.1920052,55.2437426,13.79z/data=!4m6!3m5!1s0x3e5f43496ad9c645:0xbde66e5084295162!8m2!3d25.2048493!4d55.2707828!16zL20vMDFmMDhy?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+                class="card-link"
+                >Google Map</a
+              >
+              <span class="people"><i class="fa-solid fa-users"></i> 5 People</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card" style="max-width: 18rem">
+            <img
+              src="../TravelWebsite/Images/qatar.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h2 class="card-title">Qatar</h2>
+              <p class="card-text">
+                Qatar is a country located in the Middle East, known for its
+                modern architecture, luxury shopping, and rich cultural
+                heritage.
+              </p>
+              <div class="star">
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <a href="../TravelWebsite/packages.html" class="overflow-hidden">
+              <button class="amnt">Book Now <i class="fa-solid fa-arrow-right"></i></button>
+              </a>
+            </div>
+            <div class="card-body">
+              <span class="map"><i class="fa-solid fa-location-dot"></i></span>
+              <a
+                href="https://www.google.com/maps/place/Qatar/@25.402551,51.1784184,10.38z/data=!4m6!3m5!1s0x3e45c534ffdce87f:0x1cfa88cf812b4032!8m2!3d25.354826!4d51.183884!16zL20vMDY5N3M?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+                class="card-link"
+                >Google Map</a
+              >
+              <span class="people"><i class="fa-solid fa-users"></i> 5 People</span>
+            </div>
+          </div>
+        </div>
+      <a href="../TravelWebsite/packages.html" class="overflow-hidden text-decoration-none">
+        <h1 class="lastBtn text-center">VIEW ALL PACKAGES / HOLIDAY PACKAGES</h1>
+      </a>
+      </div>
+    </section>
+   
+    <section class="sec5" id="offers">
+      <div class="container">
+        <h1 class="text-center text-white">POPULAR DESTINATION <span class="dep"><i class="fa-duotone fa-solid fa-map-pin"></i></span></h1>
+        <div class="row g-3 img-sec5">
+          <div class="col-lg-7 col-md-6">
+            <div class="row g-3">
+              <div class="col-lg-12 col-md-12 ">
+                <a href="" class="text-danger d-block position-relative 
+                h-100 overflow-hidden ">
+                <img src="../TravelWebsite/Images/kanyakumari.jpg" class="img-fluid w-100 " alt="">
+                <div class="bg-white text-danger fw-2 p-2 m-2 position-absolute top-0 start-0">30% OFF</div>
+                <div class="bg-white text-danger fw-2 px-2 m-2 position-absolute bottom-0 end-0">Kanyakumari</div>
+              </a>
+              </div>
+              <div class="col-lg-6 col-md-12">
+                <a href="" class="text-danger d-block position-relative 
+                h-100 overflow-hidden ">
+                <img src="../TravelWebsite/Images/china.jpg" class="img-fluid h-100" alt="">
+                <div class="bg-white text-danger fw-2 p-2 m-2 position-absolute top-0 start-0">20% OFF</div>
+                <div class="bg-white text-danger fw-2 px-2 m-2 position-absolute bottom-0 end-0">China</div>
+                </a>
+              </div>
+              <div class="col-lg-6 col-md-12">
+                <a href="" class="text-danger d-block position-relative 
+                h-100 overflow-hidden ">
+                <img src="../TravelWebsite/Images/japan.jpg" class="img-fluid" alt="">
+                <div class="bg-white text-danger fw-2 p-2 m-2 position-absolute top-0 start-0">34% OFF</div>
+                <div class="bg-white text-danger fw-2 px-2 m-2 position-absolute bottom-0 end-0">Japan</div>
+              </a>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-6" style="min-height: 350px;">
+            <a href="" class="text-danger d-block position-relative 
+                h-100 overflow-hidden ">
+            <img src="../TravelWebsite/Images/kolli.jpg" class="img-fluid h-100 w-100 align-items-center justify-content-center"
+            style="object-fit: cover;" alt="">
+            <div class="bg-white text-danger fw-2 p-2 m-2 position-absolute top-0 start-0">10% OFF</div>
+            <div class="bg-white text-danger fw-2 px-2 m-2 position-absolute bottom-0 end-0">Kolli Hills</div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>    
+    <section class="sec6 py-2 px-2">
+      <div class="container">
+        <div class="text-center txtrot">
+         <h1 class="text-center fs-1 fw-bold">Our <span class="text-danger fw-bold fs-1">Services <i class="fa-solid fa-gear fw-bold fs-1 set"></i></span></h1>
+        </div>
+        <div class="row sCards mt-3">
+          <div class="col-md-3 py-2 py-md-0">
+            <span class="glode"><i class="fa-solid fa-globe fs-1 mt-3"></i></span>
+            <h4 class="fw-bold">WorldWide Tours</h4>
+            <p>Worldwide tours offer travelers the chance to explore diverse cultures, landscapes, and experiences across the globe. From the ancient ruins of Rome to the bustling streets of Tokyo, these tours cater to every interest and adventure level. </p>
+          </div>
+          <div class="col-md-3 py-2 py-md-0">
+            <span class="glode"><i class="fa-solid fa-hotel fs-1 mt-3"></i></span>
+            <h4 class="fw-bold">Hotel Reservation</h4>
+            <p>Hotels provide comfortable and convenient accommodations for travelers, ranging from budget-friendly stays to luxurious resorts. They offer essential amenities like cozy rooms, dining options, and often leisure facilities such as pools or spas.</p>
+          </div>
+          <div class="col-md-3 py-2 py-md-0">
+            <span class="glode"><i class="fa-solid fa-users fs-1 mt-3"></i></span>
+            <h4 class="fw-bold">Travel Guides</h4>
+            <p>Travel guides help explorers navigate destinations with expert tips on attractions, dining, and local customs.Whether for adventure, culture, or relaxation, they ensure travelers make the most of every trip.</p>
+          </div>
+          <div class="col-md-3 py-2 py-md-0">
+            <span class="glode"><i class="fa-solid fa-gears fs-1 mt-3"></i></span>
+            <h4 class="fw-bold">Event Management</h4>
+            <p>Event management during trips ensures seamless organization of activities, from group tours to special celebrations on the go.. Experts handle schedules, venues, and logistics while adapting to travel dynamics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+   <section class="sec7 py-3 px-3" id="book" >
+        <div class="container" id="bookContainer">
+           <div class="booking text-white p-5">
+             <div class="row g-5 align-items-center">
+              <div class="col-md-6">
+              <h6 class="text-white text-uppercase">Booking</h6>
+              <h1 class="text-white mb-3">Online Booking</h1>
+              <p class="mb-3 text-white">Online booking for travel has revolutionized the way people plan their trips, offering convenience, speed, and a wide range of options at their fingertips.With just a few clicks, travelers can compare flights, hotels, car rentals, and tour packages across multiple platforms to find the best deals. Real-time availability, instant confirmations, and secure payment gateways make the process hassle-free, saving time and effort.</p>
+              <a href="" class="btn btn-outline-light py-3 px-5 mt-2">Read More</a>
+            </div>
+            <div class="col-md-6">
+              <h1 class="text-white mb-3 fw-bold text-center">Book Your Trip</h1>
+              <form name="myBook" onsubmit="return bookForm()" action="#book">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input type="text" class="form-control text-white bg-transparent" name="Bname" id="name" placeholder="Your Name">
+                      <label for="Bname" class="text-white">Your Name</label>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input type="email" class="form-control text-white bg-transparent" name="Bemail" id="email" placeholder="Your Email">
+                      <label for="Bemail" class="text-white">Enter a Email</label>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input type="datetime-local" name="Bdate" class="form-control text-white bg-transparent" id="datetime">
+                      <label for="Bdate" class="text-white">Date & Time</label>
+                    </div>
+                  </div>
+                  <!-- select -->
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                     <select name="" id="select1" name="Bselect" class="form-select text-white bg-transparent">
+                      <option value="all"selected disabled>Destionation</option>
+                      <option value="">Goa</option>
+                      <option value="">Kerala</option>
+                      <option value="">Himachal Pradesh</option>
+                      <option value="">Andhaman</option>
+                      <label for="Bselect">Destionation</label>
+                     </select>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="form-floating">
+                      <textarea class="form-control text-white bg-transparent" name="Bcomment" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px;"></textarea>
+                      <label for="floatingTextarea"class="text-white">Comments</label>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                  <button class="btn btn-outline-light w-100 py-3" value="submit" type="submit">Book Now</button>
+                </div>
+              </form>
+            </div>
+
+             </div>
+           </div>
+        </div>
+   </section>
+
+   <section class="sec8 py-3 px-3">
+    <div class="container">
+       <div class="text-center">
+        <h1 class="text-center fw-bold fs-1 mb-5">Meet Our <span class="text-danger fw-bold fs-1">Guide <i class="fa-solid fa-user-shield fa-bounce fw-bold fs-1 text-danger"></i></span></h1>
+       </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6 gide">
+            <div class="team-guide">
+              <div class="overflow-hidden">
+                <img src="../TravelWebsite/Images/guide5.jpeg" class="img-fluid w-100 h-100" alt="">
+              </div>
+              <div class="position-relative d-flex justify-content-center social" style="margin-top: -19px;">
+                <a href="" class="btn btn-square mx-1">
+                  <i class="fa-brands fa-instagram fs-1 text-danger"></i>
+                </a>
+                <a href="" class="btn btn-square mx-1">
+                  <i class="fa-brands fa-square-x-twitter fs-1"></i>
+                </a>
+                <a href="" class="btn btn-square mx-1">
+                  <i class="fa-brands fa-youtube fs-1 text-danger"></i>
+                </a>
+              </div>
+              <div class="text-center p-4">
+                <h5 class="mb-0">Rohan</h5>
+                <small>USA</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="team-guide">
+              <div class="overflow-hidden">
+                <img src="../TravelWebsite/Images/guide2.jpg" class="img-fluid w-100 h-100" alt="">
+              </div>
+              <div class="position-relative d-flex justify-content-center social" style="margin-top: -19px;">
+                <a href="" class="btn btn-square mx-1">
+                  <i class="fa-brands fa-instagram fs-1 text-danger"></i>
+                </a>
+                <a href="" class="btn btn-square mx-1">
+                  <i class="fa-brands fa-square-x-twitter fs-1"></i>
+                </a>
+                <a href="" class="btn btn-square mx-1">
+                  <i class="fa-brands fa-youtube fs-1 text-danger"></i>
+                </a>
+              </div>
+              <div class="text-center p-4">
+                <h5 class="mb-0">Sam</h5>
+                <small>Dubai</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="team-guide">
+              <div class="overflow-hidden">
+                <img src="../TravelWebsite/Images/guide6.jpg" class="img-fluid w-100 h-100" alt="">
+              </div>
+              <div class="position-relative d-flex justify-content-center social" style="margin-top: -19px;">
+                <a href="" class="btn btn-square mx-1">
+                  <i class="fa-brands fa-instagram fs-1 text-danger"></i>
+                </a>
+                <a href="" class="btn btn-square mx-1">
+                  <i class="fa-brands fa-square-x-twitter fs-1"></i>
+                </a>
+                <a href="" class="btn btn-square mx-1">
+                  <i class="fa-brands fa-youtube fs-1 text-danger"></i>
+                </a>
+              </div>
+              <div class="text-center p-4">
+                <h5 class="mb-0">Taniya</h5>
+                <small>Andhaman</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="team-guide">
+              <div class="overflow-hidden">
+                <img src="../TravelWebsite/Images/guide4.jpg" class="img-fluid w-100 h-100" alt="">
+              </div>
+              <div class="position-relative d-flex justify-content-center social" style="margin-top: -19px;">
+                <a href="" class="btn btn-square mx-1">
+                  <i class="fa-brands fa-instagram fs-1 text-danger"></i>
+                </a>
+                <a href="" class="btn btn-square mx-1">
+                  <i class="fa-brands fa-square-x-twitter fs-1"></i>
+                </a>
+                <a href="" class="btn btn-square mx-1">
+                  <i class="fa-brands fa-youtube fs-1 text-danger"></i>
+                </a>
+              </div>
+              <div class="text-center p-4">
+                <h5 class="mb-0">Vinoth</h5>
+                <small>India</small>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+    </div>
+   </section>
+
+   <section class="sec9 py-3 px-3" id="clients">
+    <div class="container">
+      <div class="text-center">
+       <h1 class="text-center fw-bold fs-1 mb-5">Our Clients <span class="text-danger fw-bold fs-1">Say! <i class="fa-solid fa-user-check fa-bounce fw-bold fs-1 text-success"></i></span></h1>
+      </div>
+      
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active s1" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="s2" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="s3" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+           <div class="carousel-item active mb-5">
+             <div class="row slideRow">
+               <div class="col-md-4">
+                <div class="card cSlide">
+                  <img class="card-img-top" src="../TravelWebsite/Images/guide7.jpg" alt="">
+                  <div class="card-body text-center">
+                    <h2 class="text-danger">Harish</h2>
+                    <h5 class="fw-bold">CBE</h5>
+                    <div class="card-text">
+                      <p>By using this recommendation was absolutly worthable. During the travel Journey may looks good with kind,whatever I need they supported at anytime</p>
+                      <div class="star">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               </div>
+               <div class="col-md-4">
+                <div class="card cSlide">
+                  <img class="card-img-top" src="../TravelWebsite/Images/guide8.jpg" alt="">
+                  <div class="card-body text-center">
+                    <h2 class="text-danger">Arun</h2>
+                    <h5 class="fw-bold">Chennai</h5>
+                    <div class="card-text">
+                      <p>By using this recommendation was absolutly worthable. During the travel Journey may looks good with kind,whatever I need they supported at anytime</p>
+                      <div class="star">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               </div>
+               <div class="col-md-4">
+                <div class="card cSlide">
+                  <img class="card-img-top" src="../TravelWebsite/Images/guide9.jpg" alt="">
+                  <div class="card-body text-center">
+                    <h2 class="text-danger">Siva</h2>
+                    <h5 class="fw-bold">CBE</h5>
+                    <div class="card-text">
+                      <p>By using this recommendation was absolutly worthable. During the travel Journey may looks good with kind,whatever I need they supported at anytime</p>
+                      <div class="star">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               </div>
+             </div>
+          </div>
+
+          <div class="carousel-item mb-5">
+            <div class="row slideRow">
+              <div class="col-md-4">
+               <div class="card cSlide">
+                 <img class="card-img-top" src="../TravelWebsite/Images/guide6.jpg" alt="">
+                 <div class="card-body text-center">
+                   <h2 class="text-danger">Anu</h2>
+                   <h5 class="fw-bold">Japan</h5>
+                   <div class="card-text">
+                    <p>By using this recommendation was absolutly worthable. During the travel Journey may looks good with kind,whatever I need they supported at anytime</p>
+                    <div class="star">
+                      <i class="fa-solid fa-star checked"></i>
+                      <i class="fa-solid fa-star checked"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                   </div>
+                 </div>
+               </div>
+              </div>
+              <div class="col-md-4">
+               <div class="card cSlide">
+                 <img class="card-img-top" src="../TravelWebsite/Images/guide3.jpg" alt="">
+                 <div class="card-body text-center">
+                   <h2 class="text-danger">Sam Rols</h2>
+                   <h5 class="fw-bold">USA</h5>
+                   <div class="card-text">
+                    <p>By using this recommendation was absolutly worthable. During the travel Journey may looks good with kind,whatever I need they supported at anytime</p>
+                    <div class="star">
+                      <i class="fa-solid fa-star checked"></i>
+                      <i class="fa-solid fa-star checked"></i>
+                      <i class="fa-solid fa-star checked"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                   </div>
+                 </div>
+               </div>
+              </div>
+              <div class="col-md-4">
+               <div class="card cSlide">
+                 <img class="card-img-top" src="../TravelWebsite/Images/guide4.jpg" alt="">
+                 <div class="card-body text-center">
+                   <h2 class="text-danger">Barath</h2>
+                   <h5 class="fw-bold">Londan</h5>
+                   <div class="card-text">
+                    <p>By using this recommendation was absolutly worthable. During the travel Journey may looks good with kind,whatever I need they supported at anytime</p>
+                    <div class="star">
+                      <i class="fa-solid fa-star checked"></i>
+                      <i class="fa-solid fa-star checked"></i>
+                      <i class="fa-solid fa-star checked"></i>
+                      <i class="fa-solid fa-star checked"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                   </div>
+                 </div>
+               </div>
+              </div>
+            </div>
+         </div>
+
+
+         <div class="carousel-item mb-5">
+          <div class="row slideRow">
+            <div class="col-md-4">
+             <div class="card cSlide">
+               <img class="card-img-top" src="../TravelWebsite/Images/guide1.jpg" alt="">
+               <div class="card-body text-center">
+                 <h2 class="text-danger">Rupesh</h2>
+                 <h5 class="fw-bold">Bengalore</h5>
+                 <div class="card-text">
+                  <p>By using this recommendation was absolutly worthable. During the travel Journey may looks good with kind,whatever I need they supported at anytime</p>
+                  <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                 </div>
+               </div>
+             </div>
+            </div>
+            <div class="col-md-4">
+             <div class="card cSlide">
+               <img class="card-img-top" src="../TravelWebsite/Images/guide2.jpg" alt="">
+               <div class="card-body text-center">
+                 <h2 class="text-danger">Ganesh</h2>
+                 <h5 class="fw-bold">Andhaman</h5>
+                 <div class="card-text">
+                  <p>By using this recommendation was absolutly worthable. During the travel Journey may looks good with kind,whatever I need they supported at anytime</p>
+                  <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                 </div>
+               </div>
+             </div>
+            </div>
+            <div class="col-md-4">
+             <div class="card cSlide">
+               <img class="card-img-top" src="../TravelWebsite/Images/guide5.jpeg" alt="">
+               <div class="card-body text-center">
+                 <h2 class="text-danger">Jeeva</h2>
+                 <h5 class="fw-bold">Kerala</h5>
+                 <div class="card-text">
+                  <p>By using this recommendation was absolutly worthable. During the travel Journey may looks good with kind,whatever I need they supported at anytime</p>
+                  <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                 </div>
+               </div>
+             </div>
+            </div>
+          </div>
+       </div>
+          
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+    </div>
+   </section>
+   <section class="sec2" id="about">
+    <div class="container">
+      <h1 class="text-center">
+        <span class="txtbook text-danger">About</span>
+        <span class="logo"
+          ><i class="fa-solid fa-person-walking-luggage"></i
+        ></span>
+      </h1>
+      <div class="row text-center">
+        <div class="col-md-6 col-sm-12 img-sec2">
+          <img
+            src="../TravelWebsite/Images/bookimg.jpg"
+            class="d-block w-100 img-fluid"
+            alt=""
+          />
+        </div>
+        <div class="col-md-6 col-sm-12 ">
+          <h1 class="text-center">Journey of Make <span class="fs-3 fw-bold" id="box">my</span> Travel</h1>
+          <p class="text-center">
+             <!-- About the make my travel -->
+             MakeMyTravel is a leading Indian online travel company that helps users book flights, hotels, trains, buses, and holiday packages with ease. It was founded in 2000 by Deep Kalra and is headquartered in Gurugram, Haryana. The platform provides a one-stop solution for all travel-related services, making trip planning simple and convenient. Users can compare prices, read reviews, and choose from a wide range of travel options. MakeMyTrip offers great discounts, deals, and seasonal offers to attract more customers. It also has a loyalty program called MMT Black, which rewards frequent travelers. The company ensures secure online payments and provides 24/7 customer support. Its mobile app is user-friendly and allows easy access to bookings anytime. Over the years, MakeMyTravel has become a trusted name in India’s travel industry. Millions of people use it daily to plan both domestic and international trips.It continues to grow by using technology, customer feedback, and innovation to improve travel experiences.
+          </p>
+          <a href="#book" class="overflow-hidden">
+          <button class="btn btn-danger btn-lg">Book Now</button>
+        </a>
+        <a href="#foot" class="overflow-hidden">
+          <button class="btn btn-outline-danger btn-lg">Contact Us</button>
+        </a>
+        </div>
+      </div>
+    </div>
+  </section>
+   <footer class="foot container-fluid bg-dark text-white pt-2 mt-3" id="foot">
+    <a href="#home" class="overflow-hidden">
+    <button class="arrowBtn btn btn-outline-danger text-white"><i class="fa-solid fa-angle-up fs-3 text-white"></i></button>
+  </a>
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Company</h4>
+          <a href="" class="btn btn-link">About Us</a>
+          <a href="" class="btn btn-link">Contact Us</a>
+          <a href="" class="btn btn-link">Privacy & Policy</a>
+          <a href="" class="btn btn-link">T&C Apply</a>
+          <a href="" class="btn btn-link">FAQ & Help</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Contact</h4>
+          <p class="mb-2 text-white text-center"><i class="fa-solid fa-location-dot me-3 text-white"></i>123 Street, NewYork,USA</p>
+          <p class="mb-2 text-white text-center"><i class="fa-solid fa-phone-volume me-3 text-white"></i>+91 9939339123
+          </p>
+          <p class="mb-2 text-white text-center"><i class="fa-solid fa-envelope me-3 text-white"></i>info@gmail.com
+          </p>
+          <!-- social-icon -->
+           <div class="d-flex pt-3 justify-content-center">
+            <a href="" class="btn btn-outline-light btn-social">
+              <i class="fa-brands fa-x-twitter fs-4 text-secondary"></i>
+            </a>
+            <a href="" class="btn btn-outline-light btn-social">
+              <i class="fa-brands fa-facebook fs-4 text-primary"></i>
+            </a>
+            <a href="" class="btn btn-outline-light btn-social">
+              <i class="fa-brands fa-instagram fs-4 text-danger"></i>
+            </a>
+            <a href="" class="btn btn-outline-light btn-social">
+              <i class="fa-brands fa-youtube fs-4 text-danger"></i>
+            </a>
+           </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <h4 class="text-white mb-3">Newsletter</h4>
+          <p class="text-white">Pack your bags and fuel your wanderlust! This month, we’re whisking you away to breathtaking landscapes, hidden gems, and vibrant cultures. </p>
+          <div class="form-floating">
+            <input type="email" name="email" class="form-control bg-transparent text-white" id="email" placeholder="example@gmail.com">
+            <label for="email" class="text-white">example@gmail.com</label>
+          </div>
+        </div>
+      </div>
+    </div>
+   </footer>
+
+   <script>
+       const button = document.getElementById("myButton");
+        button.addEventListener("click",()=>{
+            document.title = "Redirecting...";
+
+            setTimeout(()=>{
+                window.location.href="form.html";
+            },2000);
+        })
+
+
+
+        //Booking page
+            function bookForm(){
+              let Bname = document.forms["myBook"]["Bname"].value;
+              let Bemail = document.forms["myBook"]["Bemail"].value;
+              let Bcomment = document.forms["myBook"]["Bcomment"];
+              const bookItems = document.querySelectorAll("#bookContainer .booking");
+              if(Bname == "" && Bemail == "" && Bcomment){
+                alert("Enter your all details while Booking!");
+                return false;
+              }
+                //Generate the 6 digit number
+                if(bookItems){   
+                  var bookingId = Math.floor(Math.random() * 900000 + 100000);
+                  alert("Your Booking is ready!! & Your Booking ID - "+ bookingId);
+                }
+                else{
+                        alert("No Booking are there!");
+                    }
+            
+
+            }
+   </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+
+
+    </div>
+  </body>
+</html>

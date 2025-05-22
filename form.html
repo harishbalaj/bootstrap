@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credentials</title>
+    <link
+      rel="icon"
+      href="../TravelWebsite/Images/my.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="form.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/1cebc86419.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="form-box login">
+        <form name="myForm" onsubmit="return validateForm()" action="../TravelWebsite/packages.html">
+          <h1>Login</h1>
+          <div class="form-floating w-100">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="UserName"
+              id="fname"
+            />
+            <i
+              class="fa-solid fa-user fs-5"
+              style="position: absolute; right: 0px; top: 10px; padding: 10px"
+            ></i>
+            <label for="fname">UserName</label>
+          </div>
+          <div class="form-floating mt-2 w-100">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="password"
+              id="pass"
+              name="pass"
+            />
+            <i
+              class="fa-solid fa-lock fs-5"
+              style="position: absolute; right: 0px; top: 10px; padding: 10px"
+            ></i>
+            <label for="pass">Password</label>
+          </div>
+          <div class="forgot-link w-100">
+            <a href="#" class="text-dark text-decoration-none"
+              >Forgot Password?</a
+            >
+          </div>
+          <button type="submit" value="submit" class="btn btn-outline-dark w-100">
+            Login
+          </button>
+          <p class="mt-2">or login with social platforms</p>
+          <div class="social-icons">
+            <a href=""
+              ><i class="fa-brands fa-google-plus-g text-danger"></i
+            ></a>
+            <a href=""><i class="fa-brands fa-github text-dark"></i></a>
+            <a href=""><i class="fa-brands fa-facebook-f text-primary"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin-in text-primary"></i></a>
+          </div>
+        </form>
+      </div>
+
+      <div class="form-box register">
+        <form name="myReg" onsubmit="return registerValid()">
+          <h1>Create Account</h1>
+          <div class="form-floating w-100">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="UserName"
+              id="rname"
+              name="rname"
+            />
+            <i
+              class="fa-solid fa-user fs-5"
+              style="position: absolute; right: 0px; top: 10px; padding: 10px"
+            ></i>
+            <label for="rname">UserName</label>
+          </div>
+          <div class="form-floating mt-2 w-100">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="email"
+              id="email"
+              name="remail"
+            />
+            <i
+              class="fa-solid fa-envelope fs-5"
+              style="position: absolute; right: 0px; top: 10px; padding: 10px"
+            ></i>
+            <label for="remail">Email</label>
+          </div>
+          <div class="form-floating mt-2 w-100">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="password"
+              id="pass"
+              name="rpass"
+            />
+            <i
+              class="fa-solid fa-lock fs-5"
+              style="position: absolute; right: 0px; top: 10px; padding: 10px"
+            ></i>
+            <label for="rpass">Password</label>
+          </div>
+          <button type="submit" value="submit" class="btn btn-outline-dark w-100">
+            Register
+          </button>
+          <p class="mt-2">or login with social platforms</p>
+          <div class="social-icons">
+            <a href=""
+              ><i class="fa-brands fa-google-plus-g text-danger"></i
+            ></a>
+            <a href=""><i class="fa-brands fa-github text-dark"></i></a>
+            <a href=""><i class="fa-brands fa-facebook-f text-primary"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin-in text-primary"></i></a>
+          </div>
+        </form>
+      </div>
+
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <h1 class="fw-bold">Welcome Back!</h1>
+            <p>Don't have an Account?</p>
+            <button class="hidden btn btn-outline-dark text-uppercase" id="register">
+              Sign Up
+            </button>
+          </div>
+
+          <div class="toggle-panel toggle-right">
+            <h1 class="fw-bold">Hello,<span class="text-danger">Traveller!</span></h1>
+            <p>Already have an Account?</p>
+            <button class="hidden btn btn-outline-dark fw-bold text-uppercase" id="login">
+              Sign In
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const container = document.getElementById("container");
+      const registerBtn = document.getElementById("register");
+      const loginBtn = document.getElementById("login");
+
+      loginBtn.addEventListener("click", () => {
+        container.classList.add("active");
+      });
+      registerBtn.addEventListener("click", () => {
+        container.classList.remove("active");
+      });
+
+      function validateForm() {
+        let x = document.forms["myForm"]["fname"].value;
+        let y= document.forms["myForm"]["pass"].value;
+        if (x !== "Harishbalaji") {
+          alert("UserName is not valid");
+          return false;
+        }
+        else if(y!=="1234"){
+            alert("Password is not valid!");
+            return false;
+        }
+        else{
+            alert("Login Successfully!");
+            window.location.href="packages.html";
+        }
+      }
+
+      function registerValid(){
+        let a = document.forms["myReg"]["rname"].value;
+        let b = document.forms["myReg"]["remail"].value;
+        let c = document.forms["myReg"]["rpass"].value;
+
+        if(a=="" && b=="" && c==""){
+            alert("Please enter your credientials!");
+        }
+        else{
+            
+            alert("Your credentials regsiter successfully! Please login again!");
+        }
+      }
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
