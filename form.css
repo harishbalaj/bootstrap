@@ -7,7 +7,6 @@
 }
 body{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -67,20 +66,6 @@ body{
     transform: translateX(100%);
     opacity: 1;
     z-index: 5;
-    animation-name: move;
-    animation-duration: 0.6s;
-    animation-timing-function: ease-in-out;
-    animation-direction: alternate;
-}
-@keyframes move{
-    0%, 49.99%{
-        opacity: 0;
-        z-index: 1;
-    }
-    50%,100%{
-        opacity: 1;
-        z-index: 5;
-    }
 }
 .social-icons a{
     border: 1px solid #333;
@@ -106,12 +91,12 @@ body{
     height: 100%;
     overflow: hidden;
     transition: all 0.6s ease-in-out;
-    /* border-radius: 150px 0 0 100px; */
+    border-radius: 150px 0 0 100px;
     z-index: 100;
 }
 .container.active .toggle-container{
     transform: translateX(-100%);
-    /* border-radius: 0px 50px 10px 0; */
+    border-radius: 0px 150px 100px 0;
 }
 .toggle{
     background-color: #c9d6ff;
@@ -160,6 +145,73 @@ body{
 }
 .container.active .toggle-right{
     transform: translateX(200%);
+}
+.btnback button{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+@media screen and (max-width:403px) {
+    .container{
+        position: relative;
+        top: 50px;
+    }
+    .form-box{
+        position: relative;
+        top: 100px;
+    }
+    
+}
+
+@media screen and (max-width: 801px){
+  .container{
+    height: auto;
+    min-height: 600px;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+   .register{
+    transform: translateY(0);
+    z-index: 2;
+   }
+   .login{
+    transform: translateY(100%);
+    z-index: 1;
+   }
+   .container.active .register {
+    transform: translateY(-100%);
+  }
+  .container.active .login {
+    transform: translateY(0);
+  }
+  .toggle-container{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    border-radius: 0px 0px 100px 100px;
+  }
+  .container.active .toggle-container{
+    transform: translateY(0);
+    border-radius: 0px 0px 100px 100px;
+}
+  .toggle{
+    height: 100%;
+    border-radius: 0px 0px 100px 100px;
+    background-image: none;
+    background-position: center;
+  }
+  .form-box{
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    /* height: calc(100% - 150px); */
+  }
 }
 
 
